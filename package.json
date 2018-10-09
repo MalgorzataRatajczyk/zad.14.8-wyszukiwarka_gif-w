@@ -1,16 +1,18 @@
 {
-  "name": "zad.14.7-React-JSX",
+  "name": "zad.13.9-strona_do_uploadowania",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
     "server": "http-server -c-1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "http-server": "^0.11.1"
+  "dependencies": {
+    "colors": "^1.3.2",
+    "formidable": "^1.2.1"
   }
 }
