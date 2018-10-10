@@ -8,19 +8,7 @@ App = React.createClass({
       };
     },
   
-    handleSearch: function(searchingText) { // 1.
-      this.setState({
-        loading: true // 2.
-      });
-  
-      this.getGif(searchingText, function(gif) { // 3.
-        this.setState({ // 4
-          loading: false, // a
-          gif: gif, // b
-          searchingText: searchingText // c
-        });
-      }.bind(this)); 
-    },
+    
   
   
     getGif: function(searchingText, callback) { // 1
@@ -41,7 +29,20 @@ App = React.createClass({
       };
       xhr.send();
     },
+    
+    handleSearch: function(searchingText) { // 1.
+      this.setState({
+        loading: true // 2.
+      });
   
+      this.getGif(searchingText, function(gif) { // 3.
+        this.setState({ // 4
+          loading: false, // a
+          gif: gif, // b
+          searchingText: searchingText // c
+        });
+      }.bind(this)); 
+    },
   
     render: function() {
   
@@ -56,7 +57,7 @@ App = React.createClass({
             <h1>search your gif!</h1>
             <p>Find gifs on <a href='http://giphy.com'>
               giphy.com</a> <br/> Naciskaj enter aby pobrać kolejne gify.</p>
-            <Search onSearch={this.handleSearch}/>
+              <Search onSearch={this.handleSearch}/>
           <Gif
             loading={this.state.loading}
             url={this.state.gif.url}
